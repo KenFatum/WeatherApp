@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
     <title>Weather App</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Weather App</h2>
+        <div class="app">
+            <div class="input-field">
+                <input class="cityname-input" type="text" placeholder="Enter a Cityname..."/>
+                <select class="select-days">
+                    {#each}
+                        <option>Select the Days</option> 
+                    {/each}
+                </select>
+                <button class="search-btn">Search</button>
+            </div>
+            <div class="city-display">Cityname</div>
+            <div class="celsius-display">4</div>
+            <div class="days-humidity-display">
+                <div class="days-display">Days: 3</div>
+                <div class="humidity-display">Humidity: 4</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

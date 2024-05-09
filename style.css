@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.input-field {
+
+}
+
+.city-display {
+    font-size: 2rem;
+    border-style: solid;
+    margin: 1rem;
+}
+
+.celsius-display {
+    font-size: 4rem;
+    border-style: solid;
+
+}
+
+.days-humidity-display {
+    border-style: solid;
+    padding: 1rem;
+}
+
+.days-display {
+    font-size: 2rem;
+    border-style: solid;
+}
+
+.humidity-display {
+    font-size: 2rem;
+    border-style: solid;
+}
