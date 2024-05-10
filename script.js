@@ -1,11 +1,34 @@
-window.addEventListener("load", function () {
-    const nameCity = document.querySelector(".cityname-input");
-    //const selectDays = documents.querySelector(".select-days");
-    const searchBtn = document.querySelector(".search-btn button");
-    const displayCity = document.querySelector(".city-display");
-    const displayCelsius = document.querySelector(".celsius-display");
-    const displayDays = document.querySelector(".days-display");
-    const displayHumidity = document.querySelector(".humidity-display");
+const apiKey = '7ff5a57667c8fc9d7b5cae512419651a';
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
-    
+const cityNameInput = document.querySelector(".city-name-input");
+const searchButton = document.querySelector(".search-btn");
+const cityNameElement = document.querySelector(".city-name");
+const weatherIconElement = document.querySelector(".weather-icon");
+const temperatureElement = document.querySelector(".temperature");
+const humidityElement = document.querySelector(".humidity");
+const descriptionElement = document.querySelector(".description");
+
+function getWeather(city) {
+    const url = `${apiUrl}?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            cityNameElement.textContent = data.name;
+            weatherIconElement.textContent = data.weather[0].icon;
+            temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
+            humidityElement.textContent = `${Math.round(data.main.humidity)}%`;
+            descriptionElement.textContent = data.weather[0].description;
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        })
+}
+
+searchButton.addEventListener('click', () => {
+    const city = cityNameInput.value;
+    if (city) {
+        getWeather(city);
+    }
 })
