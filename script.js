@@ -16,7 +16,9 @@ function getWeather(city) {
         .then(response => response.json())
         .then(data => {
             cityNameElement.textContent = data.name;
-            weatherIconElement.textContent = data.weather[0].icon;
+            //weatherIconElement.textContent = data.weather[0].icon;
+            let dataIcon = data.weather[0].icon;
+            weatherIconElement.src = `https://openweathermap.org/img/wn/${dataIcon}.png`;
             temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
             humidityElement.textContent = `${Math.round(data.main.humidity)}%`;
             descriptionElement.textContent = data.weather[0].description;
