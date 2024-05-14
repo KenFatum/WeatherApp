@@ -6,6 +6,7 @@ const forecastDays = document.querySelector(".forecast-select");
 const searchButton = document.querySelector(".search-btn");
 
 //Current Weather
+const currentWeatherInfoElement = document.querySelector(".current-weather-info");
 const cityNameElement = document.querySelector(".city-name");
 const weatherIconElement = document.querySelector(".weather-icon");
 const temperatureElement = document.querySelector(".temperature");
@@ -43,6 +44,7 @@ function getForecastWeather(city) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
+            dailyForecastInfosElement.textContent = '';
             const firstDate = data.list[0].dt_txt.split(" ")[0];
             let countDays = forecastDays.value;
             for (let i = 0; i < 40; i++) {
@@ -54,7 +56,7 @@ function getForecastWeather(city) {
                     if (--countDays <= 0) {
                         break;
                     }
-                    console.log(forecast.main.temp, forecast.dt_txt);
+                    //console.log(forecast.main.temp, forecast.dt_txt);
                     const weekDay = new Date(forecast.dt * 1000).toLocaleDateString("en-US", {
                         weekday: 'long', 
                         year: 'numeric',
@@ -99,7 +101,6 @@ function createDailyForecastInfo(day, iconUrl, temp) {
     div.appendChild(p);
 
     return div;
-
 }
 
 searchButton.addEventListener('click', () => {
