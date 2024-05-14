@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <title>Weather App</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Weather App</h1>
-        <input type="text" class="city-name-input" placeholder="Enter a city...">
+        <div class="container__input">
+            <input type="text" class="city-name-input" placeholder="Enter a city...">
+            <select class="forecast-select">
+                <option class="container__option" value="5">5 Days</option>
+                <option class="container__option" value="3">3 Days</option>
+            </select>
+        </div>
+
         <button class="search-btn">Search</button>
         <div class="weather-info">
             <h2 class="city-name"></h2>
@@ -18,7 +27,11 @@
             <p class="humidity"></p>
             <p class="description"></p>
         </div>
+        <div class="daily-forecast-infos">
+           
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
