@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color:azure;
+    background-color: #eee;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@ body {
     width: 75vw;  
     text-align: center;
     padding: 20px;
-    background-color: aquamarine;
+    background-color: rgb(127, 255, 212);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -35,9 +35,13 @@ h1 {
 .city-name-input {
     width: 80%;
     height: 100%;
-    
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+
+.forecast-select {
+    border: 1px solid grey;
+    border-radius: 8px;
 }
 
 .search-btn {
@@ -45,21 +49,24 @@ h1 {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
 .daily-forecast-infos {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .daily-forecast-info {
     width: 200px;
-    border: 1px solid black;
+    border: none;
     border-radius: 8px;
+    background-color: rgb(110, 224, 186);
 }
 
-.weather-info {
+.current-weather-info {
     margin-top: 20px;
 }

@@ -3,7 +3,6 @@ const apiKey = '7ff5a57667c8fc9d7b5cae512419651a';
 
 const cityNameInput = document.querySelector(".city-name-input");
 const forecastDays = document.querySelector(".forecast-select");
-const containerOption = document.querySelectorAll(".container__option");
 const searchButton = document.querySelector(".search-btn");
 
 //Current Weather
@@ -15,9 +14,7 @@ const descriptionElement = document.querySelector(".description");
 
 // Daily Forecast Weather
 const dailyForecastInfosElement = document.querySelector(".daily-forecast-infos");
-const dailyForecastElement = document.querySelector(".forecast-daily");
-const weatherIconForecastElement = document.querySelector(".forecast-weather-icon");
-const temperatureForecastElement = document.querySelector(".forecast-temperature");
+
 
 
 function getCurrentWeather(city) {
@@ -30,9 +27,9 @@ function getCurrentWeather(city) {
             cityNameElement.textContent = data.name;
             let dataIcon = data.weather[0].icon;
             weatherIconElement.src = `https://openweathermap.org/img/wn/${dataIcon}.png`;
-            temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
-            humidityElement.textContent = `${Math.round(data.main.humidity)}%`;
-            descriptionElement.textContent = data.weather[0].description;
+            temperatureElement.textContent = `Temperature: ${Math.round(data.main.temp)}°C`;
+            humidityElement.textContent = `Humidity: ${Math.round(data.main.humidity)}%`;
+            descriptionElement.textContent = "Description: " + data.weather[0].description;
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
